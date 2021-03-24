@@ -1,0 +1,32 @@
+{
+	"name": "google-safe-browsing",
+	"version": "1.0.0",
+	"main": "lib/cjs/index.js",
+	"module": "lib/index.js",
+	"types": "lib/index.d.ts",
+	"repository": "https://github.com/marvinschopf/google-safe-browsing",
+	"author": "Marvin Schopf <marvin@schopf.biz>",
+	"license": "Apache-2.0",
+	"private": false,
+	"devDependencies": {
+		"@types/node": "14.14.35",
+		"@types/node-fetch": "2.5.8",
+		"ava": "3.15.0",
+		"prettier": "2.2.1",
+		"typescript": "4.2.3"
+	},
+	"dependencies": {
+		"node-fetch": "2.6.1"
+	},
+	"scripts": {
+		"build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+		"style:fix": "prettier --write src/ *.json",
+		"style:check": "prettier --check src/ *.json"
+	},
+	"prettier": {
+		"useTabs": true,
+		"semi": true,
+		"tabWidth": 4,
+		"singleQuote": false
+	}
+}
