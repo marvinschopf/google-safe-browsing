@@ -20,8 +20,8 @@
 	},
 	"scripts": {
 		"build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
-		"style:fix": "prettier --write src/ *.json",
-		"style:check": "prettier --check src/ *.json"
+		"style:fix": "prettier --write src/ *.json *.md",
+		"style:check": "prettier --check src/ *.json *.md"
 	},
 	"prettier": {
 		"useTabs": true,
