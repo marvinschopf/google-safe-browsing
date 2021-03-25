@@ -20,7 +20,7 @@
  */
 
 const test = require("ava");
-const { GoogleSafeBrowsingClient } = require("../src/index");
+const { GoogleSafeBrowsingClient } = require("./../lib/cjs/index");
 
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY
 	? process.env.GOOGLE_API_KEY
