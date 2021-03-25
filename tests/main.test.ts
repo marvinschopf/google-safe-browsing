@@ -22,9 +22,13 @@
 import test, { ExecutionContext } from "ava";
 import { GoogleSafeBrowsingClient } from "./../src/index";
 
-const GOOGLE_API_KEY: string = process.env.GOOGLE_API_KEY;
+const GOOGLE_API_KEY: string = process.env.GOOGLE_API_KEY
+	? process.env.GOOGLE_API_KEY
+	: "";
 
-const UNSAFE_URL_1: string = process.env.UNSAFE_URL_1;
+const UNSAFE_URL_1: string = process.env.UNSAFE_URL_1
+	? process.env.UNSAFE_URL_1
+	: "";
 
 test("isUrlSafe", async (t: ExecutionContext) => {
 	const client: GoogleSafeBrowsingClient = new GoogleSafeBrowsingClient(
