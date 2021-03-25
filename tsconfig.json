@@ -10,5 +10,5 @@
 		"declarationDir": "./lib",
 		"moduleResolution": "node"
 	},
-	"include": ["./src"]
+	"include": ["./src", "./test"]
 }
