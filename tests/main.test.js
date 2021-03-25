@@ -19,21 +19,17 @@
  *
  */
 
-import test, { ExecutionContext } from "ava";
-import { GoogleSafeBrowsingClient } from "./../src/index";
+const test = require("ava");
+const { GoogleSafeBrowsingClient } = require("../src/index");
 
-const GOOGLE_API_KEY: string = process.env.GOOGLE_API_KEY
+const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY
 	? process.env.GOOGLE_API_KEY
 	: "";
 
-const UNSAFE_URL_1: string = process.env.UNSAFE_URL_1
-	? process.env.UNSAFE_URL_1
-	: "";
+const UNSAFE_URL_1 = process.env.UNSAFE_URL_1 ? process.env.UNSAFE_URL_1 : "";
 
-test("isUrlSafe", async (t: ExecutionContext) => {
-	const client: GoogleSafeBrowsingClient = new GoogleSafeBrowsingClient(
-		GOOGLE_API_KEY
-	);
+test("isUrlSafe", async (t) => {
+	const client = new GoogleSafeBrowsingClient(GOOGLE_API_KEY);
 	t.is(await client.isUrlSafe("example.com"), true);
 	t.is(await client.isUrlSafe("marvinschopf.com"), true);
 	t.is(await client.isUrlSafe(UNSAFE_URL_1), false);
